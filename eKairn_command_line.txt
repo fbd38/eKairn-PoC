@@ -1,0 +1,30 @@
+//
+//  eKairn command line syntax
+//
+
+Commands: 
+'?': help			--> Display valid commands
+'I': Information 		--> Display eKairn Information (Model, FW..)
+'S': Setup			--> Display eKairn setup (Marker, TX Level..)
+'V': Battery Voltage		--> Display Battery Voltage (format = 4.2f)
+'%': Battery Percent		--> Display Battery Percentage (format = 3d)
+
+"Txy": Set RF Tx Level		--> Set RF Transmit Level ("xy" should be [0 -> -40dBm, .. , 13 -> +8dBm])
+"Kxyzt": Set Key Event key	--> Set Key Event key ("xyzt" is Hexadecimal value)
+"Xxyz": Set RSSI_at_1m		--> Set RF RX RSSI_at_1m parameter ("xyz" sould be [-70, .. , -20])
+"Pxyzt": Set Period		--> Set Advertising Period ("xyzt" should be [100 --> 62ms, .. , 1600 -> 1s])
+"Mxyz": Set Beacon Marker	--> Set the beacon marker number
+					if 0<= "xyz" <= 30 	--> START
+		 			if "xyz" >= 256		--> END
+					if 31 <= "xyz" <= 255	--> "xyz"
+					other values not permited
+
+'G': Set GREEN LED On		--> Set RED LED On
+'g': Set GREEN LED Off		--> Set RED LED Off
+'R': Set RED LED On		--> Set RED LED On
+'r': Set RED LED On		--> Set RED LED Off
+
+'Z': Reload Factory		--> Reload Factory Default Setup
+
+Default setup is: "T4, S-54, M0, P160, K0000, g, r;"
+
